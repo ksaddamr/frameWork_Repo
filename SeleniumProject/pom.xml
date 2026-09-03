@@ -13,7 +13,11 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
 	
-	<build>
+	<profiles>
+  	
+  		<profile>
+  		<id>ST</id>
+  		  <build>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -22,13 +26,36 @@
             <configuration>
                 <suiteXmlFiles>
                 <!-- TestNG suite XML Files-->
-                    <suiteXmlFile>testng.xml</suiteXmlFile>
+                    <suiteXmlFile>testng_ST.xml</suiteXmlFile> 
                 </suiteXmlFiles>
             </configuration>
         </plugin>
     </plugins>
 </build>
-	
+  		
+  	</profile>
+  	
+  		<profile>
+  		<id>RT</id>
+  		  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version> <!-- Use the latest stable version -->
+            <configuration>
+                <suiteXmlFiles>
+                <!-- TestNG suite XML Files-->
+                    <suiteXmlFile>testng_RT.xml</suiteXmlFile> 
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+  		
+  	</profile>
+  	
+  </profiles>
 
 	<dependencies>
   
@@ -89,6 +116,14 @@
     <artifactId>extentreports</artifactId>
     <version>5.1.2</version>
 </dependency>   
+<!-- Source: https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.6.0-M1</version>
+    <scope>compile</scope>
+</dependency>
+
   </dependencies>  
 
 
