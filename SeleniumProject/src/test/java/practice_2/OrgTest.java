@@ -1,13 +1,11 @@
-package Practice1;
+ package practice_2;
 
 import org.testng.annotations.Test;
 
-public class ContactTest {
-	
+public class OrgTest {
+
 	@Test
-	
-	public void createContactTest() {
-		System.out.println("execute createContactTest");
+	public void createOrgTest() {
 		
 		String URL = System.getProperty("url");
 		String BROWSER = System.getProperty("browser");
@@ -18,11 +16,17 @@ public class ContactTest {
 		System.out.println(BROWSER);
 		System.out.println(USERNAME);
 		System.out.println(PASSWORD);
-	}
 
-	@Test
-	public void modifyContactTest() {
-		System.out.println("execute modifyContactTest");
+
+
+		
+
+		System.out.println("execute createOrgTest");
 	}
 	
+	@Test
+	
+	public void modifyOrgTest() {
+		System.out.println("execute modifyOrgTest");
+	}
 }
